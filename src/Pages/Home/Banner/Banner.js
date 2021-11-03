@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
+import { Button, Container, Grid, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import chair from "../../../images/chair.png";
@@ -42,82 +42,86 @@ const Banner = () => {
 				</Grid>
 			</Grid>
 
+			{/* important information */}
 			<Grid
 				container
 				spacing={2}
-				sx={{ textAlign: "center", mt: -10, color: "#fff" }}
+				sx={{ textAlign: "center", mt: -14, color: "#fff", height: 120 }}
 			>
 				<Grid item xs={4}>
-					<Box>
+					<Paper
+						sx={{ height: "100%", display: "flex", alignItems: "center" }}
+						style={{ background: "#00D0F6" }}
+					>
 						<Grid
-							sx={{
-								px: 2,
-								justifyContent: "center",
-								display: "flex",
-								alignItems: "center",
-							}}
 							container
-							style={{ background: "#00DAD6" }}
+							spacing={2}
+							sx={{ alignItems: "center", color: "white" }}
 						>
 							<Grid item xs={4}>
-								<i className="far fa-clock"></i>
+								<Typography variant="h2" component="h2">
+									<i className="far fa-clock"></i>
+								</Typography>
 							</Grid>
 							<Grid item xs={8}>
-								<Typography variant="h5">Opening Hours</Typography>
-								<Typography variant="p">
-									Lorem ipsum dolor sit amet. dolor sit amet.
+								<Typography variant="h6" sx={{ fontWeight: "bold" }}>
+									Opening hour
+								</Typography>
+								<Typography>
+									Lorem ipsum dolor sit amet consectetur adipisicing
+									elit.
 								</Typography>
 							</Grid>
 						</Grid>
-					</Box>
+					</Paper>
 				</Grid>
 				<Grid item xs={4}>
-					<Box>
+					<Paper
+						sx={{ height: "100%", display: "flex", alignItems: "center" }}
+						style={{ background: "#34495E" }}
+					>
 						<Grid
-							sx={{
-								px: 2,
-								justifyContent: "center",
-								display: "flex",
-								alignItems: "center",
-							}}
 							container
-							style={{ background: "#34495E", color: "#fff" }}
+							spacing={2}
+							sx={{ alignItems: "center", color: "white" }}
 						>
 							<Grid item xs={4}>
-								<i className="far fa-clock"></i>
-							</Grid>
-							<Grid item xs={8}>
-								<Typography variant="h5">Visit our location</Typography>
-								<Typography variant="p">
-									Banani R-15, D-block Dhaka
+								<Typography variant="h2" component="h2">
+									<i className="fas fa-map-marker-alt"></i>
 								</Typography>
 							</Grid>
+							<Grid item xs={8}>
+								<Typography variant="h6" sx={{ fontWeight: "bold" }}>
+									Visit our location
+								</Typography>
+								<Typography>Banani r-15, D-block Dhakak</Typography>
+							</Grid>
 						</Grid>
-					</Box>
+					</Paper>
 				</Grid>
 				<Grid item xs={4}>
-					<Box>
+					<Paper
+						sx={{ height: "100%", display: "flex", alignItems: "center" }}
+						style={{ background: "#00D0F6" }}
+					>
 						<Grid
-							sx={{
-								px: 2,
-								display: "flex",
-								alignItems: "center",
-							}}
 							container
-							style={{ background: "#00DAD6" }}
+							spacing={2}
+							sx={{ alignItems: "center", color: "white" }}
 						>
 							<Grid item xs={4}>
-								<i className="far fa-clock"></i>
-							</Grid>
-							<Grid item xs={8}>
-								<Typography variant="h5">Contact us now</Typography>
-								<Typography variant="p">
-									01705511718 Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Quam qui illum
+								<Typography variant="h2" component="h2">
+									<i className="fas fa-phone-alt"></i>
 								</Typography>
 							</Grid>
+							<Grid item xs={8}>
+								<Typography variant="h6" sx={{ fontWeight: "bold" }}>
+									Contact us now
+								</Typography>
+								<Typography>01705511718</Typography>
+							</Grid>
 						</Grid>
-					</Box>
+					</Paper>
 				</Grid>
 			</Grid>
 		</Container>
