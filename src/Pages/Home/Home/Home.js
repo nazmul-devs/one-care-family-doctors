@@ -6,6 +6,7 @@ import Services from "../Services/Services";
 import ExceptionalDental from "../ExceptionalDental/ExceptionalDental";
 import AppointmentBanner from "../AppointmentBanner/AppointmentBanner";
 import Testemonial from "../Testemonial/Testemonial";
+import Blog from "../Blog/Blog";
 
 const BannerBg = {
 	background: `url(${bg}) center`,
@@ -22,6 +23,7 @@ const Home = () => {
 			<ExceptionalDental />
 			<AppointmentBanner />
 			<Testemonial />
+			<Blog />
 		</>
 	);
 };

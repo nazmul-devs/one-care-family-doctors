@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home/Home";
 import Header from "./Pages/Header/Header";
 
-// #00D0F6
+// #00D0F6, #00dad6
 function App() {
 	return (
 		<Router>
