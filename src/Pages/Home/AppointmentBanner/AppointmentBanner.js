@@ -22,11 +22,14 @@ const AppointmentBanner = () => {
 					/>
 				</Grid>
 				<Grid item xs="7">
-					<Typography sx={{ fontWeight: "bold", color: "#00D0F6" }}>
+					<Typography
+						variant="h6"
+						sx={{ fontWeight: "bold", color: "#00D0F6" }}
+					>
 						APPOINMENT
 					</Typography>
 					<Typography variant="h3" sx={{ color: "#fff", my: 4 }}>
-						Make an apoinment <br /> Today
+						Make an appoinment <br /> Today
 					</Typography>
 					<Typography sx={{ fontWeight: "bold", color: "#E5E7E9" }}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
