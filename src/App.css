@@ -1,3 +1,8 @@
+* {
+	text-decoration: none;
+	object-fit: cover;
+}
+
 .main-color {
 	color: #00dad6;
 	font-weight: bold;
@@ -7,4 +12,24 @@
 }
 .secondary-color {
 	color: #bfbfbf;
+}
+
+.btn-all {
+	border: none;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 255, 176, 1) 0%,
+		rgb(0, 247, 255) 100%
+	);
+	padding: 18px 7px;
+	font-size: 19px;
+	font-weight: bold;
+	color: white;
+}
+.btn-all:hover {
+	background: linear-gradient(
+		90deg,
+		rgb(0, 247, 255) 100%,
+		rgba(0, 255, 176, 1) 0%
+	);
 }
