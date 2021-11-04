@@ -40,7 +40,7 @@ const appoinmentBook = [
 	},
 ];
 
-const AvailableAppoinment = ({ value }) => {
+const AvailableAppoinment = ({ value, handleOpen }) => {
 	console.log(value);
 	return (
 		<Container>
@@ -80,7 +80,9 @@ const AvailableAppoinment = ({ value }) => {
 							>
 								{detail.space} SPACES AVAILABLE
 							</Typography>
-							<button className="btn-all">BOOK APPOINMENT</button>
+							<button onClick={handleOpen} className="btn-all">
+								BOOK APPOINMENT
+							</button>
 						</Paper>
 					</Grid>
 				))}
