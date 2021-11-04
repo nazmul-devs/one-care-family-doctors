@@ -30,7 +30,7 @@ const Blog = () => {
 			</Typography>
 
 			{/* Blogs */}
-			<Grid container spacing={4}>
+			<Grid container spacing={4} sx={{ mt: 8 }}>
 				<Grid item xs={4}>
 					<Paper
 						elevation={2}

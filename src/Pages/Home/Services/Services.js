@@ -27,7 +27,7 @@ const Services = () => {
 			>
 				Service we provide
 			</Typography>
-			<Grid container spacing={4} sx={{ textAlign: "center" }}>
+			<Grid container spacing={4} sx={{ mt: 8, textAlign: "center" }}>
 				<Grid item xs={4}>
 					<img src={fluoride} sx={{ width: "80%" }} alt="" />
 					<Typography variant="h5" sx={{ fontWeight: "bold", my: 3 }}>
