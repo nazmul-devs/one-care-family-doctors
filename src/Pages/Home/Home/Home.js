@@ -3,6 +3,7 @@ import React from "react";
 import Banner from "../Banner/Banner";
 import bg from "../../../images/bg.png";
 import Services from "../Services/Services";
+import ExceptionalDental from "../ExceptionalDental/ExceptionalDental";
 
 const BannerBg = {
 	background: `url(${bg}) center`,
@@ -16,6 +17,7 @@ const Home = () => {
 				<Banner />
 			</Box>
 			<Services />
+			<ExceptionalDental />
 		</>
 	);
 };

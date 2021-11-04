@@ -14,7 +14,7 @@ const Services = () => {
 					color: "#00D0F6",
 				}}
 			>
-				SERVICES
+				OUR SERVICES
 			</Typography>
 			<Typography
 				variant="h4"
