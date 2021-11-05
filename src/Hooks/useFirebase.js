@@ -26,7 +26,9 @@ const useFirebase = () => {
 			.catch((error) => {
 				setError(error.message);
 			})
-			.finally(() => setLoading(false));
+			.finally(() => {
+				setLoading(false);
+			});
 	};
 
 	// Login user
@@ -64,6 +66,7 @@ const useFirebase = () => {
 				setUser({});
 			}
 			setLoading(false);
+			setError("");
 		});
 		return unsubscribe;
 	}, []);
