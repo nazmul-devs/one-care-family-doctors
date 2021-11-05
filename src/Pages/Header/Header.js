@@ -33,8 +33,15 @@ const Header = () => {
 							Appoinment
 						</Typography>
 					</Link>
+					<Link to="/login">
+						<Typography
+							sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
+						>
+							LOGIN
+						</Typography>
+					</Link>
 
-					<Button color="inherit">Login</Button>
+					<Button color="inherit">Logout</Button>
 				</Toolbar>
 			</AppBar>
 		</Box>

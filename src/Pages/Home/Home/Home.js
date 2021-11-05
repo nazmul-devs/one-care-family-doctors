@@ -9,6 +9,8 @@ import Testemonial from "../Testemonial/Testemonial";
 import Blog from "../Blog/Blog";
 import Doctors from "../Doctors/Doctors";
 import Contact from "../Contact/Contact";
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
 
 const BannerBg = {
 	background: `url(${bg}) center`,
@@ -18,6 +20,7 @@ const BannerBg = {
 const Home = () => {
 	return (
 		<>
+			<Header />
 			<Box style={BannerBg}>
 				<Banner />
 			</Box>
@@ -28,6 +31,7 @@ const Home = () => {
 			<Blog />
 			<Doctors />
 			<Contact />
+			<Footer />
 		</>
 	);
 };
