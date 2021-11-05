@@ -1,9 +1,9 @@
-import { Button, Container, Grid, TextField, Typography } from "@mui/material";
+import { Container, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import img from "../../../images/login.png";
 
-const Login = () => {
+const Register = () => {
 	return (
 		<>
 			<Container sx={{ mt: 4 }}>
@@ -20,7 +20,7 @@ const Login = () => {
 							variant="h6"
 							sx={{ mb: 8, color: "text.secondary" }}
 						>
-							Login
+							Register
 						</Typography>
 						<form>
 							<TextField
@@ -37,6 +37,13 @@ const Login = () => {
 								type="password"
 								variant="standard"
 							/>
+							<TextField
+								sx={{ width: "60%", my: 1 }}
+								id="standard-basic"
+								label="Confirm Password"
+								type="password"
+								variant="standard"
+							/>
 							<button
 								className="btn-all"
 								style={{
@@ -45,11 +52,11 @@ const Login = () => {
 									margin: "30px auto",
 								}}
 							>
-								Login
+								Register
 							</button>
 						</form>
-						<Link to="/register" style={{ color: "#34495E" }}>
-							New here ? Register pleace
+						<Link to="/login" style={{ color: "#34495E" }}>
+							Already Register ? Login pleace
 						</Link>
 					</Grid>
 					<Grid item sx={12} md={6}>
@@ -61,4 +68,4 @@ const Login = () => {
 	);
 };
 
-export default Login;
+export default Register;
