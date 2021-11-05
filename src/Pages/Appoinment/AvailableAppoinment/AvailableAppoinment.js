@@ -1,5 +1,7 @@
 import { Container, Grid, Paper, Typography } from "@mui/material";
 import React from "react";
+import AppoinmentModal from "../AppoinmnetModal/AppoinmentModal";
+import Booking from "../Booking/Booking";
 
 const appoinmentBook = [
 	{
@@ -40,54 +42,28 @@ const appoinmentBook = [
 	},
 ];
 
-const AvailableAppoinment = ({ value, handleOpen }) => {
-	console.log(value);
+const AvailableAppoinment = ({ value }) => {
 	return (
-		<Container>
-			<Typography
-				variant="h4"
-				sx={{
-					fontWeight: "bold",
-					textAlign: "center",
-					my: 4,
-					color: "#00D0F6",
-				}}
-			>
-				Available Appoinments on {value.toDateString()}
-			</Typography>
-			<Grid container spacing={4}>
-				{appoinmentBook.map((detail) => (
-					<Grid item xs={12} md={4} key={detail.id}>
-						<Paper
-							sx={{ px: 4, py: 2 }}
-							sx={{ textAlign: "center", py: 4 }}
-						>
-							<Typography
-								variant="h6"
-								sx={{ fontWeight: "bold", color: "#00D0F6" }}
-							>
-								{detail.name}
-							</Typography>
-							<Typography sx={{ fontWeight: "bold" }}>
-								{detail.time}
-							</Typography>
-
-							<Typography
-								variant="caption"
-								display="block"
-								gutterBottom
-								sx={{ color: "text.secondary" }}
-							>
-								{detail.space} SPACES AVAILABLE
-							</Typography>
-							<button onClick={handleOpen} className="btn-all">
-								BOOK APPOINMENT
-							</button>
-						</Paper>
-					</Grid>
-				))}
-			</Grid>
-		</Container>
+		<>
+			<Container>
+				<Typography
+					variant="h4"
+					sx={{
+						fontWeight: "bold",
+						textAlign: "center",
+						my: 4,
+						color: "#00D0F6",
+					}}
+				>
+					Available Appoinments on {value.toDateString()}
+				</Typography>
+				<Grid container spacing={4}>
+					{appoinmentBook.map((detail) => (
+						<Booking key={detail.id} detail={detail} value={value} />
+					))}
+				</Grid>
+			</Container>
+		</>
 	);
 };
 

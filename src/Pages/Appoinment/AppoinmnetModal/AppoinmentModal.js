@@ -2,16 +2,9 @@ import { Modal, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-const AppoinmentModal = ({ open, handleClose }) => {
+const AppoinmentModal = ({ open, handleClose, detail, date }) => {
 	return (
-		<Box
-			sx={{
-				height: "100vh",
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-			}}
-		>
+		<Box>
 			<Modal
 				open={open}
 				onClose={handleClose}
@@ -20,7 +13,7 @@ const AppoinmentModal = ({ open, handleClose }) => {
 			>
 				<Box
 					sx={{
-						mt: 10,
+						my: 3,
 						background: "#fff",
 						width: 500,
 						mx: "auto",
@@ -29,34 +22,57 @@ const AppoinmentModal = ({ open, handleClose }) => {
 						borderRadius: 2,
 					}}
 				>
-					<Typography id="modal-modal-title" variant="h6" component="h2">
-						Text in a modal
+					<Typography
+						id="modal-modal-title"
+						variant="h6"
+						component="h3"
+						sx={{ textAlign: "center", color: "#00D0F6", my: 2 }}
+					>
+						{detail.name}
 					</Typography>
-					<Box component="form" sx={{ textAlign: "center", mt: 6 }}>
+					<Box
+						component="form"
+						sx={{ textAlign: "center", mt: 4, pb: 6, px: 4 }}
+					>
 						<TextField
-							sx={{ background: "#fff", width: "60%", my: 2 }}
-							id="filled-basic"
-							label="Email"
-							variant="filled"
-							placeholder="Your email"
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							defaultValue={date}
+							variant="outlined"
+							disabled
 						/>
 						<TextField
-							sx={{ background: "#fff", width: "60%", my: 2 }}
-							id="filled-basic"
-							label="Subject"
-							variant="filled"
-							placeholder="Subject"
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							placeholder="Your Name"
+							variant="outlined"
 						/>
 
 						<TextField
-							sx={{ background: "#fff", width: "60%" }}
-							id="standard-multiline-static"
-							multiline
-							rows={4}
-							placeholder="Message"
-							variant="standard"
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							placeholder="Phone Number"
+							variant="outlined"
 						/>
-						<button className="btn-all d-block">Book</button>
+						<TextField
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							placeholder="Email"
+							variant="outlined"
+						/>
+						<TextField
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							variant="outlined"
+							defaultValue={detail.time}
+							disabled
+						/>
+						<button
+							style={{ float: "right" }}
+							className="btn-all d-block"
+						>
+							Book
+						</button>
 					</Box>
 				</Box>
 			</Modal>
