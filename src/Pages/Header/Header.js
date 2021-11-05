@@ -2,8 +2,10 @@ import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import { Link } from "react-router-dom";
+import UseAuth from "../../Hooks/UseAuth";
 
 const Header = () => {
+	const { user, LogOut } = UseAuth();
 	return (
 		<Box sx={{ flexGrow: 1 }}>
 			<AppBar position="static">
@@ -33,15 +35,19 @@ const Header = () => {
 							Appoinment
 						</Typography>
 					</Link>
-					<Link to="/login">
-						<Typography
-							sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
-						>
-							LOGIN
-						</Typography>
-					</Link>
-
-					<Button color="inherit">Logout</Button>
+					{user.email ? (
+						<Button onClick={LogOut} color="inherit">
+							<i className="fas fa-sign-out-alt"></i> Logout
+						</Button>
+					) : (
+						<Link to="/login">
+							<Typography
+								sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
+							>
+								LOGIN
+							</Typography>
+						</Link>
+					)}
 				</Toolbar>
 			</AppBar>
 		</Box>
