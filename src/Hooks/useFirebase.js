@@ -13,24 +13,33 @@ FirebaseInit();
 const useFirebase = () => {
 	const [user, setUser] = useState({});
 	const [error, setError] = useState("");
+	const [loading, setLoading] = useState(true);
 	const auth = getAuth();
 
 	// User Register
-	const Register = (email, password) => {
+	const Register = (email, password, location, history) => {
 		createUserWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {})
+			.then((userCredential) => {
+				const path = location?.state?.from || "/";
+				history.replace(path);
+			})
 			.catch((error) => {
 				setError(error.message);
-			});
+			})
+			.finally(() => setLoading(false));
 	};
 
 	// Login user
-	const Login = (email, password) => {
+	const Login = (email, password, location, history) => {
 		signInWithEmailAndPassword(auth, email, password)
-			.then((userCredential) => {})
+			.then((userCredential) => {
+				const path = location?.state?.from || "/";
+				history.replace(path);
+			})
 			.catch((error) => {
 				setError(error.message);
-			});
+			})
+			.finally(() => setLoading(false));
 	};
 
 	// LogOut
@@ -42,19 +51,22 @@ const useFirebase = () => {
 			})
 			.catch((error) => {
 				setError(error.message);
-			});
+			})
+			.finally(() => setLoading(false));
 	};
 	// OnState Change
 	useEffect(() => {
+		setLoading(true);
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
 			} else {
 				setUser({});
 			}
+			setLoading(false);
 		});
 		return unsubscribe;
 	}, []);
-	return { Register, Login, LogOut, user, error };
+	return { Register, Login, LogOut, user, error, loading };
 };
 export default useFirebase;

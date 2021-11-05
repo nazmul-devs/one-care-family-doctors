@@ -15,6 +15,7 @@
 }
 
 .btn-all {
+	cursor: pointer;
 	margin-top: 15px;
 	border: none;
 	background: linear-gradient(
