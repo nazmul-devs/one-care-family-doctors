@@ -1,6 +1,6 @@
 import React from "react";
 import { LocalizationProvider, StaticDatePicker } from "@mui/lab";
-import isWeekend from "date-fns/isWeekend";
+
 import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 

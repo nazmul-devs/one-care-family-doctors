@@ -10,52 +10,8 @@ import {
 import Paper from "@mui/material/Paper";
 import React from "react";
 
-const rows = [
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-	{
-		name: "dkjfhs",
-		calories: "sdfh",
-		fat: "sdfh",
-		carbs: "sfh",
-		protein: "sdfh",
-	},
-];
-
-const AppoinmentTable = () => {
+const AppoinmentTable = ({ data }) => {
+	console.log(data);
 	return (
 		<TableContainer component={Paper} sx={{ height: 425, pt: 2, px: 6 }}>
 			<Table size="small" aria-label="appoinment table">
@@ -73,13 +29,13 @@ const AppoinmentTable = () => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{rows.map((row) => (
-						<TableRow key={row.name}>
+					{data.map((row) => (
+						<TableRow key={row._id}>
 							<TableCell align="center" sx={{ border: "none", p: 1 }}>
-								{row.calories}
+								{row.name}
 							</TableCell>
 							<TableCell align="center" sx={{ border: "none", p: 1 }}>
-								{row.fat}
+								{row.email}
 							</TableCell>
 							<TableCell align="center" sx={{ border: "none" }}>
 								<Typography
@@ -94,7 +50,7 @@ const AppoinmentTable = () => {
 										color: "#fff",
 									}}
 								>
-									{row.carbs} <i className="fas fa-caret-down"></i>
+									{row.date} <i className="fas fa-caret-down"></i>
 								</Typography>
 							</TableCell>
 						</TableRow>

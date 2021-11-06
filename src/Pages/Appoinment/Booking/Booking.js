@@ -2,14 +2,14 @@ import { Grid, Paper, Typography } from "@mui/material";
 import React from "react";
 import AppoinmentModal from "../AppoinmnetModal/AppoinmentModal";
 
-const Booking = ({ detail, value }) => {
+const Booking = ({ detail, value, setAppoinmentAdded }) => {
 	const handleOpen = () => setOpen(true);
 	const [open, setOpen] = React.useState(false);
 	const handleClose = () => setOpen(false);
 	return (
 		<>
 			<Grid item xs={12} md={4}>
-				<Paper sx={{ textAlign: "center", py: 4, px: 4, py: 2 }}>
+				<Paper sx={{ textAlign: "center", py: 4, px: 4 }}>
 					<Typography
 						variant="h6"
 						sx={{ fontWeight: "bold", color: "#00D0F6" }}
@@ -34,9 +34,10 @@ const Booking = ({ detail, value }) => {
 				</Paper>
 			</Grid>
 			<AppoinmentModal
+				setAppoinmentAdded={setAppoinmentAdded}
 				open={open}
 				handleClose={handleClose}
-				date={value.toDateString()}
+				date={value}
 				detail={detail}
 			/>
 		</>

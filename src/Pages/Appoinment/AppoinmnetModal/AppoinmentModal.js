@@ -3,9 +3,20 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import UseAuth from "../../../Hooks/UseAuth";
 
-const AppoinmentModal = ({ open, handleClose, detail, date }) => {
+const AppoinmentModal = ({
+	open,
+	handleClose,
+	detail,
+	date,
+	setAppoinmentAdded,
+}) => {
 	const { user } = UseAuth();
-	const userInfo = { name: user.displayName, email: user.email };
+	const userInfo = {
+		name: user.displayName,
+		email: user.email,
+		date: date.toLocaleDateString(),
+		time: detail.time,
+	};
 	const [bookingData, setBookingData] = useState(userInfo);
 
 	// handle input field
@@ -18,6 +29,20 @@ const AppoinmentModal = ({ open, handleClose, detail, date }) => {
 	};
 
 	const bookedHandle = (e) => {
+		const url = "http://localhost:5000/appoinment";
+		fetch(url, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(bookingData),
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				if (data.acknowledged) {
+					setAppoinmentAdded(true);
+				}
+			});
 		e.preventDefault();
 		handleClose();
 	};
@@ -56,7 +81,7 @@ const AppoinmentModal = ({ open, handleClose, detail, date }) => {
 						<TextField
 							sx={{ background: "#fff", width: "100%", my: 1 }}
 							id="outlined-basic"
-							defaultValue={date}
+							defaultValue={date.toDateString()}
 							variant="outlined"
 							disabled
 						/>

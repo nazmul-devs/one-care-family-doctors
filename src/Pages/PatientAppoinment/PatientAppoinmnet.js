@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -18,9 +18,12 @@ import Typography from "@mui/material/Typography";
 import { Grid, Paper } from "@mui/material";
 import Calender from "../Appoinment/Calender/Calender";
 import AppoinmentTable from "./AppoinmentTable/AppoinmentTable";
+import UseAuth from "../../Hooks/UseAuth";
 
 const drawerWidth = 240;
 const PatientAppoinmnet = (props) => {
+	const { user } = UseAuth();
+	const [data, setData] = useState([]);
 	const [value, setValue] = React.useState(new Date());
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -29,12 +32,20 @@ const PatientAppoinmnet = (props) => {
 		setMobileOpen(!mobileOpen);
 	};
 
+	// get appoinmnet data
+	useEffect(() => {
+		fetch(`http://localhost:5000/appoinment?email=${user.email}`)
+			.then((res) => res.json())
+			.then((data) => setData(data));
+	}, []);
+
 	const drawer = (
 		<div
 			style={{
 				backgroundImage:
 					"linear-gradient(to top, #00d0f6, #00dff3, #00ece2, #00f7c4, #03ff9c)",
 				height: "100vh",
+				color: "#fff",
 			}}
 		>
 			<Toolbar />
@@ -173,7 +184,7 @@ const PatientAppoinmnet = (props) => {
 									{value.toDateString()}
 								</Typography>
 							</Box>
-							<AppoinmentTable />
+							<AppoinmentTable data={data} />
 						</Paper>
 					</Grid>
 				</Grid>
