@@ -12,7 +12,7 @@ const doctors = [
 	{
 		id: 2,
 		name: "johny deep",
-		img: "https://lh3.googleusercontent.com/proxy/hsAXAow2mANAIea5mJIdyY48nzZwIUSA6bDI7rvAEKpQm_MghkeLH3qMMUChdb9YrPMQTHI-9WIo2E2pnfWyOdfcj--SDYG3uHaM45i6NIopVw3aXA",
+		img: "https://st2.depositphotos.com/46171552/45591/i/450/depositphotos_455913884-stock-photo-young-doctor-glasses-white-coat.jpg",
 		phone: "0177449237",
 	},
 	{

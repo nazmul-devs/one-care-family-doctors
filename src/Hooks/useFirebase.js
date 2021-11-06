@@ -25,8 +25,7 @@ const useFirebase = () => {
 				const newUser = { email, displayName: name };
 				setUser(newUser);
 				updateProfile(auth.currentUser, {
-					displayName: "Jane Q. User",
-					photoURL: "https://example.com/jane-q-user/profile.jpg",
+					displayName: name,
 				})
 					.then(() => {
 						setSuccess(true);
