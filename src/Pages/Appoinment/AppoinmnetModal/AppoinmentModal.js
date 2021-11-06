@@ -14,7 +14,6 @@ const AppoinmentModal = ({
 	const userInfo = {
 		name: user.displayName,
 		email: user.email,
-		date: date.toLocaleDateString(),
 		time: detail.time,
 	};
 	const [bookingData, setBookingData] = useState(userInfo);
@@ -29,6 +28,7 @@ const AppoinmentModal = ({
 	};
 
 	const bookedHandle = (e) => {
+		bookingData["date"] = date.toLocaleDateString();
 		const url = "http://localhost:5000/appoinment";
 		fetch(url, {
 			method: "POST",

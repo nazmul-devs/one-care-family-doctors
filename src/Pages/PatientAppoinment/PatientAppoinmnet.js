@@ -34,10 +34,14 @@ const PatientAppoinmnet = (props) => {
 
 	// get appoinmnet data
 	useEffect(() => {
-		fetch(`http://localhost:5000/appoinment?email=${user.email}`)
+		fetch(
+			`http://localhost:5000/appoinment?email=${
+				user.email
+			}&date=${value.toLocaleDateString()}`
+		)
 			.then((res) => res.json())
 			.then((data) => setData(data));
-	}, []);
+	}, [value]);
 
 	const drawer = (
 		<div
