@@ -11,7 +11,14 @@ const Testemonial = () => {
 			<Typography variant="h6" sx={{ fontWeight: "bold", color: "#00D0F6" }}>
 				TESTEMONIAL
 			</Typography>
-			<Typography variant="h3">
+			<Typography
+				variant="h3"
+				sx={{
+					fontWeight: "bold",
+					my: 3,
+					color: "#34495E",
+				}}
+			>
 				What's Our Paitents <br /> Says
 			</Typography>
 

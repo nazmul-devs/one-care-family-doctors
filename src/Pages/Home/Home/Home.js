@@ -15,7 +15,6 @@ import Footer from "../../Footer/Footer";
 const BannerBg = {
 	background: `url(${bg}) center`,
 	backgrounSize: "cover",
-	height: "85vh",
 };
 const Home = () => {
 	return (

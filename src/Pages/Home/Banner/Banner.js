@@ -13,16 +13,23 @@ const Banner = () => {
 					justifyContent: "center",
 					display: "flex",
 					alignItems: "center",
-					height: "92vh",
+					py: 16,
 				}}
 			>
 				<Grid item xs={5}>
 					<Box>
-						<Typography variant="h4" component="div">
+						<Typography
+							variant="h3"
+							sx={{
+								fontWeight: "bold",
+								my: 3,
+								color: "#34495E",
+							}}
+						>
 							Your new smile <br /> Start here
 						</Typography>
 						<Typography
-							sx={{ m: 2, mb: 6 }}
+							sx={{ my: 6 }}
 							className="secondary-color"
 							variant="p"
 							component="div"
@@ -30,7 +37,7 @@ const Banner = () => {
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 							Quisquam quis deleniti atque asperiores
 						</Typography>
-						<Button variant="contained">Contained</Button>
+						<button className="btn-all">Learn more</button>
 					</Box>
 				</Grid>
 				<Grid
@@ -46,7 +53,7 @@ const Banner = () => {
 			<Grid
 				container
 				spacing={2}
-				sx={{ textAlign: "center", mt: -14, color: "#fff", height: 120 }}
+				sx={{ textAlign: "center", color: "#fff", height: 120 }}
 			>
 				<Grid item xs={4}>
 					<Paper

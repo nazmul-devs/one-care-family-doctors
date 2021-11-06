@@ -24,25 +24,13 @@ const ExceptionalDental = () => {
 						Exceptional Dental <br />
 						Care, on Your Terms
 					</Typography>
-					<Typography sx={{ color: "#909497", mt: 5 }}>
+					<Typography sx={{ color: "#909497", my: 6 }}>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Voluptas ipsum possimus, ipsam maxime ullam, soluta earum in
 						esse consequuntur architecto animi vel voluptatibus provident
 						cum error exercitationem voluptatum quae reprehenderit.
 					</Typography>
-					<Button
-						sx={{
-							background: "#00D0F6",
-							color: "white",
-							border: "none",
-							borderRadius: "0",
-							px: 6,
-							py: 2,
-							mt: 8,
-						}}
-					>
-						Learn more
-					</Button>
+					<button className="btn-all">LEARN MORE</button>
 				</Grid>
 			</Grid>
 		</Container>

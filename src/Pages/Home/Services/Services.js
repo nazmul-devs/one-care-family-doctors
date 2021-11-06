@@ -6,18 +6,15 @@ import whitening from "../../../images/whitening.png";
 
 const Services = () => {
 	return (
-		<Container sx={{ mt: 15 }}>
+		<Container sx={{ mt: 20 }}>
 			<Typography
-				sx={{
-					textAlign: "center",
-					fontWeight: "bold",
-					color: "#00D0F6",
-				}}
+				variant="h6"
+				sx={{ fontWeight: "bold", color: "#00D0F6", textAlign: "center" }}
 			>
 				OUR SERVICES
 			</Typography>
 			<Typography
-				variant="h4"
+				variant="h3"
 				sx={{
 					textAlign: "center",
 					fontWeight: "bold",
