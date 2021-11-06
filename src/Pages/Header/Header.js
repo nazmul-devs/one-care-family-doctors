@@ -25,20 +25,29 @@ const Header = () => {
 						<Typography
 							sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
 						>
-							Home
+							HOME
 						</Typography>
 					</Link>
 					<Link to="/appoinment">
 						<Typography
 							sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
 						>
-							Appoinment
+							APPOINMENT
 						</Typography>
 					</Link>
 					{user.email ? (
-						<Button onClick={LogOut} color="inherit">
-							<i className="fas fa-sign-out-alt"></i> Logout
-						</Button>
+						<>
+							<Link to="/patientAppoinment">
+								<Typography
+									sx={{ color: "#fff", textDecoration: "none", mx: 4 }}
+								>
+									APPOINMENT DETAILS
+								</Typography>
+							</Link>
+							<Button onClick={LogOut} color="inherit">
+								<i className="fas fa-sign-out-alt"></i> Logout
+							</Button>
+						</>
 					) : (
 						<Link to="/login">
 							<Typography

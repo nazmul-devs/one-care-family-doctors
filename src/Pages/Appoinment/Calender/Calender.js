@@ -11,7 +11,6 @@ const Calender = ({ value, setValue }) => {
 				displayStaticWrapperAs="desktop"
 				openTo="day"
 				value={value}
-				shouldDisableDate={isWeekend}
 				onChange={(newValue) => {
 					setValue(newValue);
 				}}

@@ -6,6 +6,7 @@ import Login from "./Pages/Login/Login/Login";
 import Register from "./Pages/Login/Register/Register";
 import AuthProvider from "./Context/AuthProvider";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import PatientAppoinmnet from "./Pages/PatientAppoinment/PatientAppoinmnet";
 
 // #00D0F6, #00dad6
 function App() {
@@ -18,6 +19,9 @@ function App() {
 					</Route>
 					<PrivateRoute exact path="/appoinment">
 						<Appoinment />
+					</PrivateRoute>
+					<PrivateRoute exact path="/patientAppoinment">
+						<PatientAppoinmnet />
 					</PrivateRoute>
 					<Route exact path="/login">
 						<Login />
