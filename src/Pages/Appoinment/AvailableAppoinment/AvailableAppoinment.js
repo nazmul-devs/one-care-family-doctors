@@ -1,6 +1,6 @@
-import { Container, Grid, Paper, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import AppoinmentModal from "../AppoinmnetModal/AppoinmentModal";
+
 import Booking from "../Booking/Booking";
 
 const appoinmentBook = [

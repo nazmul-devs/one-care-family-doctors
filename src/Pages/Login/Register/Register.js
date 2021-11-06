@@ -12,7 +12,7 @@ import UseAuth from "../../../Hooks/UseAuth";
 import img from "../../../images/login.png";
 
 const Register = () => {
-	const { Register, loading, error } = UseAuth();
+	const { Register, loading, error, success } = UseAuth();
 	const [inputData, setInputData] = useState({});
 	const history = useHistory();
 	const location = useLocation();
@@ -31,7 +31,13 @@ const Register = () => {
 			e.preventDefault();
 			return;
 		}
-		Register(inputData.email, inputData.password, location, history);
+		Register(
+			inputData.email,
+			inputData.password,
+			inputData.name,
+			location,
+			history
+		);
 		e.preventDefault();
 	};
 	return (
@@ -61,8 +67,24 @@ const Register = () => {
 								{error}
 							</Alert>
 						)}
+						{success && (
+							<Alert
+								severity="success"
+								sx={{ margin: "0 auto", width: "60%" }}
+							>
+								User register successfully!
+							</Alert>
+						)}
 
 						<form onSubmit={submitHandle}>
+							<TextField
+								onChange={handleInput}
+								name="name"
+								sx={{ width: "60%", my: 1 }}
+								id="standard-basic"
+								label="Name"
+								variant="standard"
+							/>
 							<TextField
 								onChange={handleInput}
 								name="email"

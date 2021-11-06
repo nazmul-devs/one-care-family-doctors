@@ -4,6 +4,7 @@ import {
 	signInWithEmailAndPassword,
 	signOut,
 	onAuthStateChanged,
+	updateProfile,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import FirebaseInit from "../Firebase/FirebaseInit";
@@ -12,14 +13,27 @@ FirebaseInit();
 
 const useFirebase = () => {
 	const [user, setUser] = useState({});
+	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(true);
 	const auth = getAuth();
 
 	// User Register
-	const Register = (email, password, location, history) => {
+	const Register = (email, password, name, location, history) => {
 		createUserWithEmailAndPassword(auth, email, password)
 			.then((userCredential) => {
+				const newUser = { email, displayName: name };
+				setUser(newUser);
+				updateProfile(auth.currentUser, {
+					displayName: "Jane Q. User",
+					photoURL: "https://example.com/jane-q-user/profile.jpg",
+				})
+					.then(() => {
+						setSuccess(true);
+					})
+					.catch((error) => {
+						setError(error.message);
+					});
 				const path = location?.state?.from || "/";
 				history.replace(path);
 			})
@@ -40,6 +54,7 @@ const useFirebase = () => {
 			})
 			.catch((error) => {
 				setError(error.message);
+				setSuccess(false);
 			})
 			.finally(() => setLoading(false));
 	};
@@ -70,6 +85,6 @@ const useFirebase = () => {
 		});
 		return unsubscribe;
 	}, []);
-	return { Register, Login, LogOut, user, error, loading };
+	return { Register, Login, LogOut, user, error, loading, success };
 };
 export default useFirebase;

@@ -1,8 +1,10 @@
 import { Modal, TextField, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const AppoinmentModal = ({ open, handleClose, detail, date }) => {
+	const { user } = UseAuth();
 	return (
 		<Box>
 			<Modal
@@ -44,29 +46,31 @@ const AppoinmentModal = ({ open, handleClose, detail, date }) => {
 						<TextField
 							sx={{ background: "#fff", width: "100%", my: 1 }}
 							id="outlined-basic"
-							placeholder="Your Name"
+							variant="outlined"
+							defaultValue={detail.time}
+							disabled
+						/>
+						<TextField
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
+							defaultValue={user.displayName}
 							variant="outlined"
 						/>
 
 						<TextField
 							sx={{ background: "#fff", width: "100%", my: 1 }}
 							id="outlined-basic"
+							placeholder="Email"
+							variant="outlined"
+							defaultValue={user.email}
+						/>
+						<TextField
+							sx={{ background: "#fff", width: "100%", my: 1 }}
+							id="outlined-basic"
 							placeholder="Phone Number"
 							variant="outlined"
 						/>
-						<TextField
-							sx={{ background: "#fff", width: "100%", my: 1 }}
-							id="outlined-basic"
-							placeholder="Email"
-							variant="outlined"
-						/>
-						<TextField
-							sx={{ background: "#fff", width: "100%", my: 1 }}
-							id="outlined-basic"
-							variant="outlined"
-							defaultValue={detail.time}
-							disabled
-						/>
+
 						<button
 							style={{ float: "right" }}
 							className="btn-all d-block"

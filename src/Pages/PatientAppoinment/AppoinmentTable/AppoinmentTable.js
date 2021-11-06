@@ -61,21 +61,27 @@ const AppoinmentTable = () => {
 			<Table size="small" aria-label="appoinment table">
 				<TableHead>
 					<TableRow>
-						<TableCell sx={{ border: "none", p: 1 }}>Name</TableCell>
-						<TableCell sx={{ border: "none", p: 1 }}>Schedule</TableCell>
-						<TableCell sx={{ border: "none" }}>Action</TableCell>
+						<TableCell align="center" sx={{ border: "none", p: 1 }}>
+							Name
+						</TableCell>
+						<TableCell align="center" sx={{ border: "none", p: 1 }}>
+							Schedule
+						</TableCell>
+						<TableCell align="center" sx={{ border: "none" }}>
+							Action
+						</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map((row) => (
 						<TableRow key={row.name}>
-							<TableCell sx={{ border: "none", p: 1 }}>
+							<TableCell align="center" sx={{ border: "none", p: 1 }}>
 								{row.calories}
 							</TableCell>
-							<TableCell sx={{ border: "none", p: 1 }}>
+							<TableCell align="center" sx={{ border: "none", p: 1 }}>
 								{row.fat}
 							</TableCell>
-							<TableCell sx={{ border: "none" }}>
+							<TableCell align="center" sx={{ border: "none" }}>
 								<Typography
 									variant="caption"
 									sx={{
