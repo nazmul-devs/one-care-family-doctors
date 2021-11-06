@@ -5,6 +5,7 @@ import {
 	TableContainer,
 	TableHead,
 	TableRow,
+	Typography,
 } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import React from "react";
@@ -56,32 +57,39 @@ const rows = [
 
 const AppoinmentTable = () => {
 	return (
-		<TableContainer component={Paper} sx={{ height: 425, pt: 2 }}>
+		<TableContainer component={Paper} sx={{ height: 425, pt: 2, px: 6 }}>
 			<Table size="small" aria-label="appoinment table">
 				<TableHead>
 					<TableRow>
-						<TableCell align="right" sx={{ border: "none", p: 1 }}>
-							Name
-						</TableCell>
-						<TableCell align="right" sx={{ border: "none", p: 1 }}>
-							Schedule
-						</TableCell>
-						<TableCell align="right" sx={{ border: "none", pr: 4 }}>
-							Action
-						</TableCell>
+						<TableCell sx={{ border: "none", p: 1 }}>Name</TableCell>
+						<TableCell sx={{ border: "none", p: 1 }}>Schedule</TableCell>
+						<TableCell sx={{ border: "none" }}>Action</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{rows.map((row) => (
 						<TableRow key={row.name}>
-							<TableCell align="right" sx={{ border: "none", p: 1 }}>
+							<TableCell sx={{ border: "none", p: 1 }}>
 								{row.calories}
 							</TableCell>
-							<TableCell align="right" sx={{ border: "none", p: 1 }}>
+							<TableCell sx={{ border: "none", p: 1 }}>
 								{row.fat}
 							</TableCell>
-							<TableCell align="right" sx={{ border: "none", pr: 4 }}>
-								{row.carbs}
+							<TableCell sx={{ border: "none" }}>
+								<Typography
+									variant="caption"
+									sx={{
+										backgroundImage:
+											"linear-gradient(to top, #00d0f6, #00dff3, #00ece2, #00f7c4, #03ff9c)",
+										px: 6,
+
+										py: 1,
+										borderRadius: 1,
+										color: "#fff",
+									}}
+								>
+									{row.carbs} <i className="fas fa-caret-down"></i>
+								</Typography>
 							</TableCell>
 						</TableRow>
 					))}

@@ -168,7 +168,7 @@ const PatientAppoinmnet = (props) => {
 								</Typography>
 								<Typography
 									variant="caption"
-									sx={{ color: "text.secondary" }}
+									sx={{ color: "text.secondary", fontWeight: "bold" }}
 								>
 									{value.toDateString()}
 								</Typography>
