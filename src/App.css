@@ -42,3 +42,21 @@
 .d-block {
 	display: block;
 }
+
+/* google btn */
+.google-btn {
+	background: #2f76e9;
+	border: none;
+
+	font-size: 19px;
+	color: #fff;
+	min-width: 180px;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: 0.2s;
+	display: block;
+	margin: 10px auto;
+}
+.google-btn:hover {
+	background: #1154c0;
+}
