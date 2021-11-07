@@ -14,6 +14,7 @@ import FirebaseInit from "../Firebase/FirebaseInit";
 FirebaseInit();
 
 const useFirebase = () => {
+	const [admin, setAdmin] = useState(false);
 	const [user, setUser] = useState({});
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState("");
@@ -123,6 +124,15 @@ const useFirebase = () => {
 				console.log(data);
 			});
 	};
+	// Get admin
+	useEffect(() => {
+		const url = `http://localhost:5000/users/${user.email}`;
+		fetch(url)
+			.then((res) => res.json())
+			.then((data) => {
+				setAdmin(data.admin);
+			});
+	}, [user.email]);
 	return {
 		Register,
 		Login,
@@ -132,6 +142,7 @@ const useFirebase = () => {
 		loading,
 		success,
 		googleLogin,
+		admin,
 	};
 };
 export default useFirebase;

@@ -24,7 +24,7 @@ import AddDoctor from "./AddDoctor/AddDoctor";
 const drawerWidth = 240;
 const PatientAppoinmnet = (props) => {
 	let { path, url } = useRouteMatch();
-	const { user } = UseAuth();
+	const { user, admin } = UseAuth();
 	const [data, setData] = useState([]);
 	const [value, setValue] = React.useState(new Date());
 	const { window } = props;
@@ -84,32 +84,36 @@ const PatientAppoinmnet = (props) => {
 						DESHBOARD
 					</Typography>
 				</Link>
-				<Link to={`${url}/makeAdmin`}>
-					<Typography
-						sx={{
-							color: "#fff",
-							textDecoration: "none",
-							mx: 4,
-							textAlign: "center",
-							my: 2,
-						}}
-					>
-						MAKE ADMIN
-					</Typography>
-				</Link>
-				<Link to={`${url}/addDoctor`}>
-					<Typography
-						sx={{
-							color: "#fff",
-							textDecoration: "none",
-							mx: 4,
-							textAlign: "center",
-							my: 2,
-						}}
-					>
-						ADD DOCTOR
-					</Typography>
-				</Link>
+				{admin && (
+					<Box>
+						<Link to={`${url}/makeAdmin`}>
+							<Typography
+								sx={{
+									color: "#fff",
+									textDecoration: "none",
+									mx: 4,
+									textAlign: "center",
+									my: 2,
+								}}
+							>
+								MAKE ADMIN
+							</Typography>
+						</Link>
+						<Link to={`${url}/addDoctor`}>
+							<Typography
+								sx={{
+									color: "#fff",
+									textDecoration: "none",
+									mx: 4,
+									textAlign: "center",
+									my: 2,
+								}}
+							>
+								ADD DOCTOR
+							</Typography>
+						</Link>
+					</Box>
+				)}
 			</List>
 		</div>
 	);

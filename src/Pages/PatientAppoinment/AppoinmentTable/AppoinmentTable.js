@@ -11,7 +11,6 @@ import Paper from "@mui/material/Paper";
 import React from "react";
 
 const AppoinmentTable = ({ data }) => {
-	console.log(data);
 	return (
 		<TableContainer component={Paper} sx={{ height: 425, pt: 2, px: 6 }}>
 			<Table size="small" aria-label="appoinment table">

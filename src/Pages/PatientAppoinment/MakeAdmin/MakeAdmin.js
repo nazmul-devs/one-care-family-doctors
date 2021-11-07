@@ -1,8 +1,9 @@
-import { TextField } from "@mui/material";
+import { Alert, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 
 const MakeAdmin = () => {
+	const [makeAdmin, setMakeAdmin] = useState(false);
 	const [email, setEmail] = useState("");
 	const onBlurChane = (e) => {
 		const inputEmail = e.target.value;
@@ -18,7 +19,11 @@ const MakeAdmin = () => {
 			body: JSON.stringify(user),
 		})
 			.then((res) => res.json())
-			.then((data) => {});
+			.then((data) => {
+				if (data.acknowledged) {
+					setMakeAdmin(true);
+				}
+			});
 		e.preventDefault();
 	};
 	return (
@@ -33,6 +38,11 @@ const MakeAdmin = () => {
 			autoComplete="off"
 			onSubmit={handleSubmit}
 		>
+			{makeAdmin && (
+				<Alert severity="success" sx={{ margin: "0 auto", width: "60%" }}>
+					User register successfully!
+				</Alert>
+			)}
 			<TextField
 				onBlur={onBlurChane}
 				id="standard-basic"
