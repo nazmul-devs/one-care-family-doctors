@@ -17,14 +17,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import UseAuth from "../../Hooks/UseAuth";
 import DeshBoardHome from "./DeshBardHome/DeshBoardHome";
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Link,
-	useParams,
-	useRouteMatch,
-} from "react-router-dom";
+import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import AddDoctor from "./AddDoctor/AddDoctor";
 
