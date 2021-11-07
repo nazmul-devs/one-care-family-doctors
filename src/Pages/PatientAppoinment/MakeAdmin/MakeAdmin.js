@@ -1,8 +1,10 @@
 import { Alert, TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import React, { useState } from "react";
+import UseAuth from "../../../Hooks/UseAuth";
 
 const MakeAdmin = () => {
+	const { token } = UseAuth();
 	const [makeAdmin, setMakeAdmin] = useState(false);
 	const [email, setEmail] = useState("");
 	const onBlurChane = (e) => {
@@ -15,6 +17,7 @@ const MakeAdmin = () => {
 			method: "PUT",
 			headers: {
 				"content-type": "application/json",
+				authorization: `Bearer ${token}`,
 			},
 			body: JSON.stringify(user),
 		})

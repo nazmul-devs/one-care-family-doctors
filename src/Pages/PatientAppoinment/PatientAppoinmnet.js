@@ -25,7 +25,7 @@ import AdminRoute from "../Login/AdminRoute/AdminRoute";
 const drawerWidth = 240;
 const PatientAppoinmnet = (props) => {
 	let { path, url } = useRouteMatch();
-	const { user, admin } = UseAuth();
+	const { user, admin, token } = UseAuth();
 	const [data, setData] = useState([]);
 	const [value, setValue] = React.useState(new Date());
 	const { window } = props;
@@ -40,7 +40,12 @@ const PatientAppoinmnet = (props) => {
 		fetch(
 			`http://localhost:5000/appoinment?email=${
 				user.email
-			}&date=${value.toLocaleDateString()}`
+			}&date=${value.toLocaleDateString()}`,
+			{
+				headers: {
+					authorization: `Bearer ${token}`,
+				},
+			}
 		)
 			.then((res) => res.json())
 			.then((data) => setData(data));

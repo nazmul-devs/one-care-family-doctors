@@ -7,6 +7,7 @@ import {
 	updateProfile,
 	GoogleAuthProvider,
 	signInWithPopup,
+	getIdToken,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
 import FirebaseInit from "../Firebase/FirebaseInit";
@@ -15,6 +16,7 @@ FirebaseInit();
 
 const useFirebase = () => {
 	const [admin, setAdmin] = useState(false);
+	const [token, setToken] = useState("");
 	const [user, setUser] = useState({});
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState("");
@@ -99,6 +101,9 @@ const useFirebase = () => {
 		const unsubscribe = onAuthStateChanged(auth, (user) => {
 			if (user) {
 				setUser(user);
+				getIdToken(user).then((idToken) => {
+					setToken(idToken);
+				});
 			} else {
 				setUser({});
 			}
@@ -142,6 +147,7 @@ const useFirebase = () => {
 		loading,
 		success,
 		googleLogin,
+		token,
 		admin,
 	};
 };
