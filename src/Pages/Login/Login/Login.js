@@ -77,6 +77,7 @@ const Login = () => {
 							New here ? Register pleace
 						</Link>
 						<button
+							style={{ marginTop: "20px" }}
 							onClick={() => googleLogin(location, history)}
 							className="google-btn "
 						>
