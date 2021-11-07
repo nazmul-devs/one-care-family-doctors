@@ -20,6 +20,7 @@ import DeshBoardHome from "./DeshBardHome/DeshBoardHome";
 import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
 import MakeAdmin from "./MakeAdmin/MakeAdmin";
 import AddDoctor from "./AddDoctor/AddDoctor";
+import AdminRoute from "../Login/AdminRoute/AdminRoute";
 
 const drawerWidth = 240;
 const PatientAppoinmnet = (props) => {
@@ -213,12 +214,12 @@ const PatientAppoinmnet = (props) => {
 							setValue={setValue}
 						/>
 					</Route>
-					<Route path={`${path}/makeAdmin`}>
+					<AdminRoute path={`${path}/makeAdmin`}>
 						<MakeAdmin />
-					</Route>
-					<Route path={`${path}/addDoctor`}>
+					</AdminRoute>
+					<AdminRoute path={`${path}/addDoctor`}>
 						<AddDoctor />
-					</Route>
+					</AdminRoute>
 				</Switch>
 			</Box>
 		</Box>
