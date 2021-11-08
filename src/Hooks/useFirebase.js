@@ -116,7 +116,7 @@ const useFirebase = () => {
 	// save user to database
 	const saveUser = (email, displayName, method) => {
 		const user = { email, displayName };
-		const url = "http://localhost:5000/users";
+		const url = "https://polar-ocean-96606.herokuapp.com/users";
 		fetch(url, {
 			method: method,
 			headers: {
@@ -131,7 +131,7 @@ const useFirebase = () => {
 	};
 	// Get admin
 	useEffect(() => {
-		const url = `http://localhost:5000/users/${user.email}`;
+		const url = `https://polar-ocean-96606.herokuapp.com/users/${user.email}`;
 		fetch(url)
 			.then((res) => res.json())
 			.then((data) => {

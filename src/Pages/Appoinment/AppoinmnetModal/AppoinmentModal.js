@@ -29,7 +29,7 @@ const AppoinmentModal = ({
 
 	const bookedHandle = (e) => {
 		bookingData["date"] = date.toLocaleDateString();
-		const url = "http://localhost:5000/appoinment";
+		const url = "https://polar-ocean-96606.herokuapp.com/appoinment";
 		fetch(url, {
 			method: "POST",
 			headers: {
